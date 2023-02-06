@@ -10,8 +10,8 @@
 	    .range([0, 500]);
 
 	var bar_color = d3.scaleLinear()
-		.range(["#33b578", "#33b578", "#ff7559"])
-		.domain([0,4,10]);
+		.range(["#8ED09B", "#8ED09B", "#ECE195", "#E7AE8D"])
+		.domain([0,4,8,12]);
 
 	$: {
 		// Since the cap for the bar length is dynamic, we do it here
@@ -59,6 +59,6 @@
 	margin: auto;
 	margin-top: 1px;
 	text-align: middle;
-	color: white;
+	color: #222;
 	}
 </style>

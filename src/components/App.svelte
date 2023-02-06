@@ -2,6 +2,8 @@
     // Import different components
     import ToDo from "../components/ToDo.svelte";
     import Graph from "../components/Graph.svelte";
+    import LineGraph from "../components/LineGraph.svelte";
+    import WordCloud from "../components/WordCloud.svelte";
 
     // Initialized needed variables
     let placeholder = "What do you need to do?"; // Placeholder for to-dos input field
@@ -65,10 +67,15 @@
 
     <div class="log-column">
         <h2 style="margin-top: 15px">Log</h2>
-
         <section class="graph">
             <Graph bind:todo_count />
         </section>
+
+        <h2 style="margin-top: 15px">Line Graph</h2>
+        <LineGraph bind:todo_count />
+
+        <h2 style="margin-top: 15px">Word Cloud</h2>
+        <WordCloud bind:todos_text_all />
     </div>
 </main>
 
