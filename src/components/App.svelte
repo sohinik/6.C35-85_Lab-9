@@ -1,22 +1,36 @@
 <script>
+    // Import different components
     import ToDo from "../components/ToDo.svelte";
     import Graph from "../components/Graph.svelte";
 
-    let placeholder = "What do you need to do?";
+    // Initialized needed variables
+    let placeholder = "What do you need to do?"; // Placeholder for to-dos input field
     let todo_text = "";
+    let todos_text_all = ""; // Text of all of the todos, could use for wordclouds
+    let todos_text_all_list = []; // Used to make todos_text_all
+
+    let todo_count = []; // List of number of todos over time, updated whenever a todo is added or deleted
+    let todo_len = 2; // Current number of todos, initialized to 2 as we assume todos starts with 2 to-dos
+
+    let next_id = 2; // ID for next todo added, initialized to 2 as we assume todos starts with 2 to-dos
 
     let todos = [
         { id: "0", text: "Learn Svelte", completed: false },
         { id: "1", text: "Finish Lab", completed: false },
     ];
 
-    let todo_count = [];
-    let todo_len = 0;
+    // Variables to update on changes (automatically)
     $: todo_len = todos.length;
     $: todo_count = todo_count.concat(todo_len);
+    $: {
+        todos_text_all_list = [];
+        for (let i = 0; i < todos.length; i++) {
+            todos_text_all_list.push(todos[i].text);
+        }
+        todos_text_all = todos_text_all_list.join(' ').toLowerCase(); // Convert list of todo text to lowercase string
+    }
 
-    let next_id = 2;
-
+    // Functions as response to user actions
     function add() {
         todos = todos.concat({
             id: next_id,
@@ -45,7 +59,7 @@
                 <ToDo bind:todo {removeTodo} />
             {/each}
             
-            <div class="actions" />
+            <div class="border" />
         </section>
     </div>
 
@@ -61,6 +75,7 @@
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
 
+    /* Change these to your personal preferences */
     :root {
         --color-bg: #ffffff;
         --color-outline: #c2c2c2;
@@ -90,18 +105,12 @@
         color: var(--color-text);
     }
 
-    label,
-    input,
-    button {
+    input {
         font-family: inherit;
         font-weight: inherit;
         line-height: inherit;
         font-size: 24px;
-        width: 100%;
-    }
-
-    input {
-        padding-left: 96px;
+        width: 100%;padding-left: 96px;
         line-height: 72px;
         font-style: italic;
         border: none;
@@ -131,19 +140,21 @@
         box-shadow: 0 0 4px var(--color-shadow);
     }
 
+    /* Column for our data visualizations, next to main todos app */
     .log-column {
         width: 500px;
         margin-top: 80px;
         margin-left: 70px;
     }
 
-    .actions {
+    /* Used to create bottom border on main todos panel */
+    .border {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
-    .actions:before {
+    .border:before {
         content: "";
         height: 40px;
         position: absolute;

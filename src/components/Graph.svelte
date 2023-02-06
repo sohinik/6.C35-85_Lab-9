@@ -5,7 +5,7 @@
 	
 	let todo_log_chart;
 
-	// scaling functions
+	// Scaling functions
 	var bar_width = d3.scaleLinear()
 	    .range([0, 500]);
 
@@ -14,15 +14,15 @@
 		.domain([0,4,10]);
 
 	$: {
-		// since the cap for the bar length is dynamic, we do it here
+		// Since the cap for the bar length is dynamic, we do it here
 		bar_width.domain([0, Math.max(...todo_count)]);
 
-		// define the bars
+		// Define the bars
 		let bars = d3.select(todo_log_chart)
 			.selectAll("div")
 			.data(todo_count.slice().reverse())
 
-		// define what to do when adding a bar
+		// Define what to do when adding a bar
 		bars.enter()
 			.append("div")
 			.style("width", function(d) {
@@ -35,7 +35,7 @@
 				return d;
 			});
 
-		// define what to do with all the bars
+		// Define what to do with all the bars
 		bars.style("width", function(d) {
 				return bar_width(d) + "px";
 			})

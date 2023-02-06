@@ -5,6 +5,7 @@
 
 <main class="todo">
     <div class="todo-item">
+        <!-- Optional: Could add another function on what to do if todo is checked (not removed), with completeTodo() function -->
         <input
             on:change={() => completeTodo(todo.id)}
             bind:checked={todo.completed}
@@ -31,14 +32,14 @@
 </main>
 
 <style>
+    /* Change these to your personal preferences */
     :root {
-        --x-color: rgb(103, 103, 103); 
-        --x-highlight: rgb(108, 38, 38); 
-        --checkbox-color: rgb(108, 38, 38); 
-        --font-size: 24px; 
-        --line-height: calc(var(--font-size) * 3); 
+        --x-color: rgb(103, 103, 103);
+        --x-highlight: rgb(108, 38, 38);
+        --checkbox-color: rgb(108, 38, 38);
+        --font-size: 24px;
+        --line-height: calc(var(--font-size) * 3);
     }
-
 
     .todo {
         border-top: 1px solid var(--color-outline);
