@@ -17,7 +17,7 @@
         width = 400 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
-    // Initialise x axis
+    // Initialize x axis
     var x = d3.scaleLinear().range([0, width]);
     var xAxis = d3.axisBottom().scale(x);
 
