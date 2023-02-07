@@ -3,7 +3,7 @@ import root from './root.svelte';
 import { set_building, set_paths, set_private_env, set_public_env, set_version } from '../../node_modules/@sveltejs/kit/src/runtime/shared.js';
 
 set_paths({"base":"","assets":""});
-set_version("1675666049302");
+set_version("1675745076312");
 
 export const options = {
 	csp: {"mode":"auto","directives":{"upgrade-insecure-requests":false,"block-all-mixed-content":false},"reportOnly":{"upgrade-insecure-requests":false,"block-all-mixed-content":false}},

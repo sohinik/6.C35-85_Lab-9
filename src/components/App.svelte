@@ -21,15 +21,30 @@
         { id: "1", text: "Finish Lab", completed: false },
     ];
 
+    let todo_count_formatted = [
+        { x: 0, y: 1 },
+        { x: 1, y: 2 },
+    ];
+
     // Variables to update on changes (automatically)
     $: todo_len = todos.length;
     $: todo_count = todo_count.concat(todo_len);
+    $: todo_count_formatted = todo_count_formatted.concat({
+        x: todo_count.length,
+        y: todo_len,
+    });
     $: {
         todos_text_all_list = [];
         for (let i = 0; i < todos.length; i++) {
             todos_text_all_list.push(todos[i].text);
         }
-        todos_text_all = todos_text_all_list.join(' ').toLowerCase(); // Convert list of todo text to lowercase string
+        todos_text_all = todos_text_all_list.join(" ").toLowerCase(); // Convert list of todo text to lowercase string
+    }
+
+    let foo = 0;
+    $: {
+        foo = 0;
+        console.log(foo);
     }
 
     // Functions as response to user actions
@@ -60,7 +75,7 @@
             {#each todos as todo (todo.id)}
                 <ToDo bind:todo {removeTodo} />
             {/each}
-            
+
             <div class="border" />
         </section>
     </div>
@@ -72,7 +87,7 @@
         </section>
 
         <h2 style="margin-top: 15px">Line Graph</h2>
-        <LineGraph bind:todo_count />
+        <LineGraph bind:todo_count_formatted />
 
         <h2 style="margin-top: 15px">Word Cloud</h2>
         <WordCloud bind:todos_text_all />
@@ -117,7 +132,8 @@
         font-weight: inherit;
         line-height: inherit;
         font-size: 24px;
-        width: 100%;padding-left: 96px;
+        width: 100%;
+        padding-left: 96px;
         line-height: 72px;
         font-style: italic;
         border: none;
