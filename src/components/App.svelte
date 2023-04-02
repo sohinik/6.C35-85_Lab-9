@@ -41,12 +41,6 @@
         todos_text_all = todos_text_all_list.join(" ").toLowerCase(); // Convert list of todo text to lowercase string
     }
 
-    let foo = 0;
-    $: {
-        foo = 0;
-        console.log(foo);
-    }
-
     // Functions as response to user actions
     function add() {
         todos = todos.concat({

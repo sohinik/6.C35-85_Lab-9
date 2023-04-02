@@ -2,7 +2,6 @@
     export let todo_count_formatted = [];
     import * as d3 from "d3";
     import { scaleLinear } from "d3-scale";
-    import { onMount } from "svelte";
 
     let linegraph;
 

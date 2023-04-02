@@ -17,11 +17,6 @@
 		return freq_dict;
 	}
 
-	function defineWord(word) {
-		console.log(word);
-		console.log(this);
-	}
-
 	let rotate = 0;
 	let dynamics = [words_freq_dict, rotate];
 	$: dynamics = [words_freq_dict, rotate];
