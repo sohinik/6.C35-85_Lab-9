@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/_page.24988b51.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.52780190.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.ea7ef8b4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.44b0fb1a.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.9da5dc04.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/layout.svelte.03c63e4f.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.js.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.e91a5e8a.js">
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">
+
+
+<main class="svelte-12jspn6"><div class="todo-column svelte-12jspn6"><h1 class="svelte-12jspn6">todos</h1>
+
+        <section class="todos svelte-12jspn6"><form class="svelte-12jspn6"><input placeholder="What do you need to do?" class="svelte-12jspn6" value=""></form>
+
+            <main class="todo svelte-z1b30s"><div class="todo-item svelte-z1b30s">
+        <input id="todo" type="checkbox" class="checkbox-round svelte-z1b30s">
+
+        <span><input placeholder="Deleted todo" type="text"  class="svelte-z1b30s" value="Learn Svelte"></span>
+
+        <button aria-label="Remove todo" class="remove svelte-z1b30s"></button></div>
+</main><main class="todo svelte-z1b30s"><div class="todo-item svelte-z1b30s">
+        <input id="todo" type="checkbox" class="checkbox-round svelte-z1b30s">
+
+        <span><input placeholder="Deleted todo" type="text"  class="svelte-z1b30s" value="Finish Lab"></span>
+
+        <button aria-label="Remove todo" class="remove svelte-z1b30s"></button></div>
+</main>
+
+            <div class="border svelte-12jspn6"></div></section></div>
+
+    <div class="log-column svelte-12jspn6"><h2 style="margin-top: 15px" class="svelte-12jspn6">Log</h2>
+        <section class="graph svelte-12jspn6"><div class="chart svelte-232yka"></div></section>
+
+        <h2 style="margin-top: 15px" class="svelte-12jspn6">Line Graph</h2>
+        <button class="svelte-gh8eho">View Whole Data</button>
+<button class="svelte-gh8eho">View Last 5</button>
+
+
+<div class="chart svelte-gh8eho"></div>
+
+        <h2 style="margin-top: 15px" class="svelte-12jspn6">Word Cloud</h2>
+        <button class="svelte-1shyh0x">Rotate Words</button>
+
+<div id="wordcloud" style="background-color: #f8f7f6;" class="svelte-ujvcz1"></div></div>
+</main>
+
+
+			
+			<script>
+				{
+					__sveltekit_ahupkr = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.52780190.js"),
+						import("./_app/immutable/entry/app.9da5dc04.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
+
+
+<style>
+	html {
+		background-color: #f8f7f6;
+	}
+</style>
